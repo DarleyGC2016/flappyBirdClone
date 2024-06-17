@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { GameEngine } from 'react-native-game-engine';
-import entities from './entities';
+import entities from "./entities"
 import Physics from './physics'
 
 export default function App() { 

@@ -1,5 +1,4 @@
 import Matter from 'matter-js'
-import React from 'react'
 
 const Physics = (entities, {touches, time, dispatch}) => {
    let engine = entities.physics.engine;
