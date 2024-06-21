@@ -13,7 +13,8 @@ export default restart =>{
     let world = engine.world;
     world.gravity.y = 0.4;
 
-    const pipeSizePosA = getPipeSizePosPair(-300);
+    const pipeSizePosA = getPipeSizePosPair();
+    const pipeSizePosB = getPipeSizePosPair(windowWidth *);
 
     return {
         physics: { engine, world},
@@ -22,6 +23,10 @@ export default restart =>{
         ObstacleTop1: Obstacle(world,'ObstacleTop1','red', pipeSizePosA.pipeTop.pos, pipeSizePosA.pipeTop.size),
 
         ObstacleBottom1: Obstacle(world,'ObstacleBottom1','blue', pipeSizePosA.pipeBottom.pos, pipeSizePosA.pipeBottom.size),
+
+        ObstacleTop2: Obstacle(world,'ObstacleTop2','red', pipeSizePosA.pipeTop.pos, pipeSizePosA.pipeTop.size),
+
+        ObstacleBottom2: Obstacle(world,'ObstacleBottom2','blue', pipeSizePosA.pipeBottom.pos, pipeSizePosA.pipeBottom.size),
 
         Floor: Floor(world,'green', { x: windowWidth / 2, y: windowHeight }, { height: 40, width: windowWidth })
     }
