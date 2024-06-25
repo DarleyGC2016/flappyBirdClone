@@ -1,27 +1,27 @@
 import Matter from 'matter-js'
 import React from 'react'
-import { View } from 'react-native';
+import { Image, View } from 'react-native';
 
 const Bird = props => {
-    const widthBody = props.body.bounds.max.x - props.body.bounds.min.x;
+    const widthBody = (props.body.bounds.max.x - props.body.bounds.min.x) + 20;
     const heightBody = props.body.bounds.max.y - props.body.bounds.min.y;
     
     const xBody = props.body.position.x - widthBody / 2
     const yBody = props.body.position.y - heightBody / 2;
 
     const color = props.color;
-
+    const image = require('../imgs/bluebird-downflap.png')
     return (
-      <View style={{        
-        borderWidth: 1, 
-        borderColor: color,
-        borderStyle: 'solid',
-        position: 'absolute',
-        left: xBody,
+      <View >
+        <Image style={{ 
+        left: xBody,       
         top: yBody,
         width: widthBody,
         height: heightBody
-      }}/>
+      }}
+       source={image}
+      />
+      </View>
     )
 }
 export default (world, color, pos, size) => {
@@ -32,8 +32,10 @@ export default (world, color, pos, size) => {
           pos.y,
           size.width,
           size.height,
-          {label: 'Bird'});
-  Matter.World.add(world, initialBird)
+          {
+            label: 'Bird',            
+          });
+  Matter.World.add(world, initialBird);
   return {
       body: initialBird,
       color,

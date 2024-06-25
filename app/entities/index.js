@@ -18,7 +18,7 @@ export default restart =>{
 
     return {
         physics: { engine, world},
-        Bird: Bird(world,'green', { x: 50, y: 300 }, { height: 40, width: 40 }),
+        Bird: Bird(world,'../imgs/bluebird-midflap.png', { x: 50, y: 300 }, { height: 40, width: 40 }),
 
         ObstacleTop1: Obstacle(world,'ObstacleTop1','red', pipeSizePosA.pipeTop.pos, pipeSizePosA.pipeTop.size),
 
