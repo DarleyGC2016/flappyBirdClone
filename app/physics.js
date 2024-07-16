@@ -16,7 +16,8 @@ const Physics = (entities, {touches, time, dispatch}) => {
          y: -8
       });
    });
-   Matter.Engine.update(engine, time.del1a);
+   
+   Matter.Engine.update(engine, time.delta);
 
    for (let index = 1; index < 2; index++) { 
       if (entities[`ObstacleTop${index}`].body.bounds.max.x <= 50 && !entities[`ObstacleTop${index}`].point) {
